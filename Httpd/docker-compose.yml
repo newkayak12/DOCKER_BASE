@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  apache:
+    container_name: httpd
+    build:
+      context: .
+    image: httpd:2.4
+    volumes: # 공유할 볼륨
+      - /home/app/apache2/:/usr/local/apache2/
+    ports: # 열어 둘 포트
+      - 80:80
+      - 50001:50001
